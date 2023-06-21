@@ -18,7 +18,10 @@ def logger(old_function):
             f.write(f'{old_function.__name__}, ')
             f.write(f'{a}, ')
             f.write(f'{k}, ')
-            f.write(f'{None if a is None and k is None else s}\n')
+            if result is not float:
+                f.write(f'{result}\n')
+            else:
+                f.write(f'{None if a is None and k is None else s}\n')
 
         return result
 
@@ -78,7 +81,10 @@ def logger_2(path):
                 f.write(f'{old_function.__name__}, ')
                 f.write(f'{a}, ')
                 f.write(f'{k}, ')
-                f.write(f'{None if a is None and k is None else s}\n')
+                if result is not float:
+                    f.write(f'{result}\n')
+                else:
+                    f.write(f'{None if a is None and k is None else s}\n')
 
             return result
 
